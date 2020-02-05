@@ -21,6 +21,7 @@ export const removeFromCart = (id) => {
 }
 
 const loadState = () => {
+
   try {
     const serializedState = localStorage.getItem('state');
     if (serializedState === null) {
@@ -34,7 +35,7 @@ const loadState = () => {
 
 const cartItemss = loadState();
 
-console.log(cartItemss);
+console.log('cart items are',cartItemss);
 
 const initialState = {
     products :[
@@ -276,7 +277,7 @@ const initialState = {
           "isFreeShipping": true
         }
       ],
-    cart:cartItemss === 'undefined' ? [] : cartItemss.cartItems
+    cart: cartItemss.cartItems
 }
 
 const reducer = (state = initialState, action) => {
@@ -289,7 +290,7 @@ const reducer = (state = initialState, action) => {
               
               return {
                 ...state,
-                cart: [ ...state.cart.filter(p=> p !== product), { ...product, qty:product.qty+1  } ]
+                cart: [ ...state.cart.filter(p=> p !== product), { ...product, qty:action.payload.qty } ]
               }
             }
             return{

@@ -1,15 +1,133 @@
+@import '~antd/dist/antd.css';
+ .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Proza Libre', sans-serif;
+}
+ .trigger:hover {
+  color: #1890ff;
+}
+#root{
+  background-color: #f3f3f3;
+}
+ .logo {
+  height: 32px;
+  background: rgba(255,255,255,.2);
+  margin: 16px;
+}
+.login-form {
+  max-width: 700px;
+}
+ .login-form-forgot {
+  float: right;
+}
+ .login-form-button {
+  width: 100%;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 400px;
+  line-height: 400px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
 .d-flex{
   display:flex;
   justify-content: space-between;
 }
 .container{
-  width: 1370px;
+  max-width: 1300px;
   margin: auto;
+  background-color: #fff;
+}
+.s-data{
+  flex-grow: 2;
+    text-align: left;
+    margin-left: 50px;
+}
+.single-price{
+  background-color: #FFF2E8;
+    padding: 15px 5px;
+    margin: 0;
+}
+.itemsCount{
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: #2c3e50;
+  color: #ffffff;
+  border-radius: 3rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .05rem .8rem .1rem;
+  line-height: inherit;
 }
 
-.App {
+
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 50px;
   text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+ #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+ #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+ #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
 
 .App-logo {
   height: 40vmin;
@@ -59,34 +177,11 @@
   box-shadow: none !important;
 }
 
-.row {
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-  margin: 0 -16px;
-}
 
-.col-25 {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
-}
 
-.col-50 {
-  -ms-flex: 50%; /* IE10 */
-  flex: 50%;
-}
 
-.col-75 {
-  -ms-flex: 75%; /* IE10 */
-  flex: 75%;
-}
 
-.col-25,
-.col-50,
-.col-75 {
-  padding: 0 16px;
-}
+
 
 /* .container {
   background-color: #f2f2f2;
@@ -102,6 +197,10 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 3px;
   box-sizing: border-box;
+  
+}
+input[type=text]:focus{
+  border-color: rgb(68, 130, 255);
 }
 
 label {
@@ -115,14 +214,14 @@ label {
   font-size: 24px;
 }
 
-.btn {
-  background-color: #4CAF50;
+.checkoutBtn {
+  background-color: rgb(68, 130, 255);
   color: white;
+  border-color: rgb(68, 130, 255);;
   padding: 12px;
   margin: 10px 0;
-  border: none;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 2px;
   cursor: pointer;
   font-size: 17px;
 }
@@ -145,6 +244,54 @@ span.price {
 #logoContainer img{
   width: 100%;
 }
+
+
+.flex{display: flex;}
+
+
+.gutter-example .ant-row > div {
+  background: transparent;
+  border: 0;
+}
+.gutter-box {
+  background: #00a0e9;
+  padding: 10px 0;
+  border-radius: 2px;
+  color: #eee;
+}
+
+
+
+.login-form {
+  max-width: 300px;
+}
+ .login-form-forgot {
+  float: right;
+}
+ .login-form-button {
+  width: 100%;
+}
+
+.product-card{
+  width: calc(250px - 10px);
+  margin: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (and change the direction - make the "cart" column go on top) */
 @media (max-width: 800px) {

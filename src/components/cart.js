@@ -7,6 +7,7 @@ import '../../node_modules/noty/lib/themes/mint.css'
 import styled from 'styled-components';
 import {Cross} from 'styled-icons/icomoon/Cross';
 import {Link} from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const RedCross = styled(Cross)`
         width:16px;
@@ -30,13 +31,19 @@ const TD = styled.td`
 `
 
 const Cart = ({cartItems,removeItemFromCart}) => {
+    
     if(cartItems.length !== 0){
         let total = 0;
         return(
-            <div className="container">
-                <div className="d-flex" >
-                <div style={{width:'100%'}}>
+            <div>
+                <Helmet>
+                        <title>Cart</title>
+                        <meta name="description" content="This is a different description for this route." />
+                </Helmet>
+                {/* <div className="d-flex" >
+                <div style={{width:'100%'}}> */}
                 <TABLE>
+                <tbody>
                 <tr>
                     <TH>Action</TH>
                     <TH>IMAGE</TH>
@@ -58,19 +65,22 @@ const Cart = ({cartItems,removeItemFromCart}) => {
                             </tr>
                         )
                     })}
+                </tbody>
                     </TABLE>
                     {/* Total = ${parseInt(total)} */}
                     
                     <Link to="/checkout" >Proceed to checkout</Link>
-                </div>
+                {/* </div>
                     
-                </div>
+                </div> */}
             </div>
             
         )
     }else{
         return(
-            <h1>No Items in cart</h1>
+            <div className="container">
+                <h1>No Items in cart</h1>
+            </div>
         )
     }    
 } 

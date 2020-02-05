@@ -8,6 +8,11 @@ export const RedCart = styled(Cart)`
     width:25px;
     cursor: pointer;
 `
+export const WhiteCart = styled(Cart)`
+    color:#fff;
+    width:25px;
+    cursor: pointer;
+`
 export const RedEye = styled(Eye)`
     color:#FE7F2D;
     width:25px;
@@ -34,5 +39,16 @@ export const BUTTONHOME = styled.button`
     cursor: pointer;
     outline:none;
 
+`
+export const SINGLECARTBUTTON = styled.button`
+    border-color: #F22D00;
+    background: #F22D00;
+    width: 180px;
+    color: #FFF;
+    padding: 10px;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 `
 

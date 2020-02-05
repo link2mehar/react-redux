@@ -6,12 +6,14 @@ import Home from './home';
 import TopNav from './topnav';
 import Checkout from './checkout';
 import Single from './single';
+import Admin from './admin'
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link
   } from "react-router-dom";
+import { connect } from "react-redux";
 
   const NAV = styled.nav`
     padding: 25px 0px;
@@ -33,9 +35,10 @@ import {
     color:#fff;
   `
   
-   const Navbar = () => {
+   const Navbar = ({cartItemsCount}) => {
+     console.log(cartItemsCount.length)
     return (
-      <Router>
+      
         <div >
           <TopNav>
             <p>top nav</p>
@@ -54,7 +57,7 @@ import {
                 <UL>
                   <LI><Link to="/" style={{color:'#fff'}}>Home</Link></LI>
                   <LI><Link to="/shop" style={{color:'#fff'}}>shop</Link></LI>
-                  <LI><Link to="/cart" style={{color:'#fff'}}>Cart</Link></LI>
+                  <LI><Link to="/cart" style={{color:'#fff'}}>Cart<span className="itemsCount">{cartItemsCount.length > 0 ? cartItemsCount.length : ''}</span></Link></LI>
                 </UL>
               </div>
             </div>
@@ -72,10 +75,17 @@ import {
             <Route exact path="/checkout" component={Checkout} />
                
             <Route exact path="/product/:id" component={Single} /> 
+         
             
           </Switch>
         </div>
-      </Router>
+     
     );
   }
-  export default Navbar;
+
+  const mapStateToProps = state => (
+
+    {cartItemsCount:state.cart}
+)
+
+  export default connect(mapStateToProps,null) (Navbar);

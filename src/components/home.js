@@ -3,7 +3,7 @@ import Fileupload from './fileUpload';
 import Sliderpoduct from './Sliderpoduct'
 import Banner1 from './banner1'
 import STabs from './tabs'
-import Silk from './silk';
+
 import Footer from './footer';
 const Home = () => {
     return(
@@ -12,7 +12,6 @@ const Home = () => {
             {/* <Fileupload/> */}
             {/* <Sliderpoduct /> */}
             <Banner1 />
-            <Silk />
             <STabs />
             <Footer />
         </div>
